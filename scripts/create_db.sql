@@ -1,1 +1,1 @@
-CREATE DATABASE alura;
+CREATE DATABASE escola;

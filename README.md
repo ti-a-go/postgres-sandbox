@@ -41,7 +41,14 @@ $ psql -U postgres -d postgres -a -f /scripts/create_db.sql
 
 
 ```bash
-$ psql -U postgres -d postgres -a -f /scripts/create_table.sql
+$ psql -U postgres -d escola -a -f /scripts/create_table.sql
+```
+
+Em seguida podemos inserir dados no banco através do scritp `insert_data.sql`
+
+
+```bash
+$ psql -U postgres -d escola -a -f /scripts/insert_data.sql
 ```
 
 # Criando um container Postgres manualmente
