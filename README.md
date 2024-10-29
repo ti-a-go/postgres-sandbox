@@ -1,5 +1,13 @@
 # Postgres + Docker
 
+## Criando container com docker compose
+
+```sh
+$ docker compose up
+```
+
+## Criando container manualmente
+
 [Imagem oficial](https://hub.docker.com/_/postgres)
 
 ```sh
