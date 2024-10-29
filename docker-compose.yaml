@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  db: 
+    image: postgres
+    container_name: pgtest
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      PGUSER: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./scripts:/scripts
+
+volumes:
+  pgdata:
