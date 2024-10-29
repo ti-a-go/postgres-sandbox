@@ -1,4 +1,11 @@
-# Postgres + Docker
+<p align="center">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" width=80>
+	<img src="https://upload.wikimedia.org/wikipedia/en/f/f4/Docker_logo.svg" width=200>
+</p>
+<p align="center">
+</p>
+
+<h1 align="center">Postgres + Docker</h1>
 
 Esse projeto cria um banco de dados Postgres dentro de um container Docker.
 
@@ -7,12 +14,18 @@ Depois de criado o container a partir do arquivo [docker compose](docker-compose
 # Criando o container a partir do docker-compose.yaml
 
 ```sh
-$ docker compose up
+$ docker compose up -d
+```
+
+Verifique se o container esta em execução com:
+
+```sh
+$ docker container ls
 ```
 
 # Executando scripts SQL
 
-Depois de criar o container com o comando `docker compose up`, abra um terminal dentro do container com o seguinte comando:
+Depois de criar o container com o comando `docker compose up -d`, abra um terminal dentro do container com o seguinte comando:
 
 ```bash
 $ docker exec -it pdtest bash
