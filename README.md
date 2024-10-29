@@ -1,12 +1,37 @@
 # Postgres + Docker
 
-## Criando container com docker compose
+Esse projeto cria um banco de dados Postgres dentro de um container Docker.
+
+Depois de criado o container a partir do arquivo [docker compose](docker-compose.yaml) é possível executar scripts SQL presentes no diretório `scripts`.
+
+# Criando o container a partir do docker-compose.yaml
 
 ```sh
 $ docker compose up
 ```
 
-## Criando container manualmente
+# Executando scripts SQL
+
+Depois de criar o container com o comando `docker compose up`, abra um terminal dentro do container com o seguinte comando:
+
+```bash
+$ docker exec -it pdtest bash
+```
+
+Em seguida execute o seguinte comando para executar um dos scripts da pasta `scripts`
+
+```bash
+$ psql -U postgres -d postgres -a -f /scripts/create_db.sql
+```
+
+É possível usilizar o comando acima apenas mudando o nome do script a ser executado, ex:
+
+
+```bash
+$ psql -U postgres -d postgres -a -f /scripts/create_table.sql
+```
+
+# Criando um container Postgres manualmente
 
 [Imagem oficial](https://hub.docker.com/_/postgres)
 
