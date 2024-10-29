@@ -11,6 +11,10 @@ Esse projeto cria um banco de dados Postgres dentro de um container Docker.
 
 Depois de criado o container a partir do arquivo [docker compose](docker-compose.yaml) é possível executar scripts SQL presentes no diretório `scripts`.
 
+
+
+
+
 # Criando o container a partir do docker-compose.yaml
 
 ```sh
@@ -22,6 +26,11 @@ Verifique se o container esta em execução com:
 ```sh
 $ docker container ls
 ```
+
+
+
+
+
 
 # Executando scripts SQL
 
@@ -51,6 +60,51 @@ Em seguida podemos inserir dados no banco através do scritp `insert_data.sql`
 $ psql -U postgres -d escola -a -f /scripts/insert_data.sql
 ```
 
+
+
+
+# Comando `psql`
+
+É uma aplicação de linha de comando utilizada para se conectar com o servidor Postgres.
+
+[Documentação oficial](https://www.postgresql.org/docs/current/app-psql.html)
+
+
+
+
+# Importanto dados de um arquivo CSV
+
+via linha de comando (`psql`):
+
+`COPY table_name FROM 'path/to/file.txt' WITH (FORMAT csv)`
+
+[Referência:Stackoverflow](https://stackoverflow.com/questions/46395085/how-to-seed-data-into-a-postgres-database-table-from-a-csv-file)
+
+`\copy <table_name> from '<path/to/file.csv>' delimiter ',' CSV HEADER;`
+
+[Referênia](https://hasura.io/docs/2.0/schema/postgres/postgres-guides/import-data-from-csv/)
+
+
+
+
+
+# Tipos de dados no Postgresql
+
+[Data types](https://www.postgresql.org/docs/current/datatype.html)
+
+[Data types: Text Search Types](https://www.postgresql.org/docs/current/datatype-textsearch.html)
+
+[Insert](https://www.postgresql.org/docs/8.1/sql-insert.html)
+
+[Update](https://www.postgresql.org/docs/12/sql-update.html)
+
+[Delete](https://www.postgresql.org/docs/current/sql-delete.html)
+
+
+
+
+
+
 # Criando um container Postgres manualmente
 
 [Imagem oficial](https://hub.docker.com/_/postgres)
@@ -72,17 +126,8 @@ $ docker run -d \
 	postgres
 ```
 
-# Tipos de dados no Postgresql
 
-[Data types](https://www.postgresql.org/docs/current/datatype.html)
 
-[Data types: Text Search Types](https://www.postgresql.org/docs/current/datatype-textsearch.html)
-
-[Insert](https://www.postgresql.org/docs/8.1/sql-insert.html)
-
-[Update](https://www.postgresql.org/docs/12/sql-update.html)
-
-[Delete](https://www.postgresql.org/docs/current/sql-delete.html)
 
 
 # Referencias
