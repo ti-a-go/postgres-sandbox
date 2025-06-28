@@ -12,8 +12,9 @@ Esse projeto cria um banco de dados Postgres dentro de um container Docker.
 Depois de criado o container a partir do arquivo [docker compose](docker-compose.yaml) é possível executar scripts SQL presentes no diretório `scripts`.
 
 
+# [Version 0.0.1](https://github.com/ti-a-go/postgres-sandbox/tree/prod-0.0.1)
 
-
+This is the first version of the project.
 
 # Criando o container a partir do docker-compose.yaml
 
