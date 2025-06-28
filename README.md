@@ -37,7 +37,7 @@ $ docker container ls
 Depois de criar o container com o comando `docker compose up -d`, abra um terminal dentro do container com o seguinte comando:
 
 ```bash
-$ docker exec -it pdtest bash
+$ docker exec -it pgtest bash
 ```
 
 Em seguida execute o seguinte comando para executar um dos scripts da pasta `scripts`
@@ -152,3 +152,25 @@ $ docker run -d \
 `role "root" does not exist postgres in docker-compose`
 
 [Stackoverflow](https://stackoverflow.com/questions/60193781/postgres-with-docker-compose-gives-fatal-role-root-does-not-exist-error)
+
+
+
+
+# Minimal Docker Compose File
+
+```yaml
+services:
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: tiago
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
+```
